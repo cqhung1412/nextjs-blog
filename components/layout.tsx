@@ -4,11 +4,12 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import AppHead from "./app-head";
+import React from "react";
 
 const name = "Big City Bear";
 export const siteTitle = "Next.js Sampling";
 
-const ProfileImage = ({ height, width }) => {
+const ProfileImage = ({ height, width }: { height: number; width: number }) => {
   return (
     <Image
       priority
@@ -21,7 +22,13 @@ const ProfileImage = ({ height, width }) => {
   );
 };
 
-const Layout = ({ children, home }) => {
+const Layout = ({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) => {
   let header = (
     <>
       <ProfileImage height={144} width={144} />

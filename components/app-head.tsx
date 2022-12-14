@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const AppHead = ({ siteTitle }) => {
+const AppHead = ({ siteTitle }: { siteTitle: string }) => {
   return (
     <Head>
       <link rel="icon" href="/favicon.ico" />

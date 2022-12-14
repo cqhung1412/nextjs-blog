@@ -7,7 +7,17 @@ import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
 import utilStyles from "../styles/utils.module.css";
 
-export default function Home({ allPosts }) {
+import { GetStaticProps } from "next";
+
+export default function Home({
+  allPosts,
+}: {
+  allPosts: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
   const intro = (
     <section className={utilStyles.headingMd}>
       <p>
@@ -42,11 +52,11 @@ export default function Home({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   const allPosts = getSortedPostData();
   return {
     props: {
       allPosts,
     },
   };
-}
+};

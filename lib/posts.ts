@@ -22,7 +22,7 @@ export function getSortedPostData() {
     // Combine the data with id
     return {
       id,
-      ...matterResult.data,
+      ...(matterResult.data as { date: string; title: string }),
     };
   });
 
@@ -41,7 +41,7 @@ export function getAllPostIds() {
   }));
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postDir, `${id}.md`);
   const fileContent = fs.readFileSync(fullPath, "utf8");
 
@@ -58,6 +58,6 @@ export async function getPostData(id) {
   return {
     id,
     htmlContent,
-    ...matterResult.data,
+    ...(matterResult.data as { title: string; date: string }),
   };
 }
