@@ -7,8 +7,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #0070f3;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 * {
@@ -22,14 +26,8 @@ img {
 
 h1,
 h2,
-p,
-ul {
+p {
   margin: 0;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
 }
 
 button {
