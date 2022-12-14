@@ -7,7 +7,7 @@ import AppHead from "./app-head";
 import React from "react";
 
 const name = "Big City Bear";
-export const siteTitle = "Next.js Sampling";
+export const siteTitle = "CQHung";
 
 const ProfileImage = ({ height, width }: { height: number; width: number }) => {
   return (
